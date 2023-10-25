@@ -1,12 +1,10 @@
 import functions
 import time
 
-
 current_time = time.strftime("%b %d, %Y %H:%M:%S")
 print('It is ', current_time)
 
-
-from functions import read_todos, write_todos
+from functions import get_read_todos, write_todos
 
 while True:
     user_action = input('Please enter your action: ')
@@ -16,7 +14,7 @@ while True:
     if user_action.startswith('add'):
         todo = user_action[4:]
 
-        todos = read_todos()
+        todos = get_read_todos()
 
         # file = open('todos_list', 'r')
         # todos = file.readlines()
@@ -56,9 +54,9 @@ while True:
             number = int(user_action[5:])
             number = number - 1
 
-            # or index = int(input("Number of the todo to complete: ")) - 1
+            """ or index = int(input("Number of the todo to complete: ")) - 1"""
 
-            todos = read_todos()
+            todos = get_read_todos()
 
             new_todo = input('Enter new todo: ')
             todos[number] = new_todo + '\n'
@@ -73,7 +71,7 @@ while True:
         try:
             number = int(user_action[9:])
 
-            todos = read_todos()
+            todos = get_read_todos()
 
             todo_to_remove = todos.pop(number - 1).strip('\n')
 
@@ -91,6 +89,3 @@ while True:
 
     else:
         print('Wrong command')
-
-
-

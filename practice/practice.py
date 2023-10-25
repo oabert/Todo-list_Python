@@ -312,7 +312,7 @@
 #         return "Gas"
 
 
-# main.py:
+# cli.py:
 #
 # import functions
 #
@@ -324,3 +324,18 @@
 #
 # def count(phrase):
 #     return phrase.count('.')
+
+import random
+#
+# lower_input = int(input('Enter the lower bound: '))
+# higher_input = int(input('Enter the higher bound: '))
+#
+# num_random = random.randint(lower_input, higher_input)
+#
+# print(num_random)
+
+
+# def covert(ounces):
+#     ounces = float(ounces)
+#     milliliters = ounces*29.57353
+#     return milliliters
