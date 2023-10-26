@@ -11,14 +11,22 @@ def add_todo():
     todos_list.append(todo_input)
     # """write/add new todo to the list/update todos_list.txt"""
     write_todos(todos_list)
+    st.session_state['new_todo'] = ''
 
+
+""""""
 
 st.title('My todo app')
 st.subheader('This is my todolist project')
 st.write('This app will increase your productivity')
 
-for todo_item in todos_list:
-    st.checkbox(todo_item)
+for index, todo_item in enumerate(todos_list):
+    checkbox = st.checkbox(todo_item, key=todo_item)
+    if checkbox:
+        todos_list.pop(index)
+        write_todos(todos_list)
+        del st.session_state[todo_item]
+        st.experimental_rerun()
 
 st.text_input(label='', placeholder='Add your todo...',
               on_change=add_todo, key='new_todo')
