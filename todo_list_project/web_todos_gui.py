@@ -13,9 +13,6 @@ def add_todo():
     write_todos(todos_list)
     st.session_state['new_todo'] = ''
 
-
-""""""
-
 st.title('My todo app')
 st.subheader('This is my todolist project')
 st.write('This app will increase your productivity')
